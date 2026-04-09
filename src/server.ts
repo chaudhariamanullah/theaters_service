@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import app from "./app.js";
+const PORT = process.env.PORT || 3000;
 
-app.listen(3001,()=>{
-    console.log("theater Servive Running On Port 3001");
+app.listen(PORT,()=>{
+    console.log("theater Servive Running On Port ${PORT}");
 })
