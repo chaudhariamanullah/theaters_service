@@ -18,9 +18,9 @@ const theaterModel = {
                     theater_name,
                     theater_status 
                     FROM theaters
-                    LIMIT ? OFFSET ?`;
+                    LIMIT ${limit} OFFSET ${offset}`;
                     
-        const [rows] = await pool.execute<RowDataPacket[]>(sql,[limit,offset]);
+        const [rows] = await pool.execute<RowDataPacket[]>(sql);
         return rows;
     },
 
